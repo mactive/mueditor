@@ -3,18 +3,44 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Flickr U Wall－ city</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" charset="utf-8"></script> -->
+		<script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="css/mactive.css">
+		<script type="text/javascript" charset="utf-8" async defer>
+			$(document).ready(function(){
+				$('#target').submit(function() {
+					location.reload();
+				  return false;
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<div id="images">
 			<div id="images_title">
-				<h1>Flickr <input type="text" class="purple" id="content" value="sex"> Wall</h1>
+				<h1>Flickr Wall</h1>
+				<form id="target" action="destination.html">
+					<input type="text" class="purple" id="content" value="sex">
+				  <input type="submit" value="Go" />
+				</form>
 				<span class="grey999">you can change the purple word</span>
 			</div>
+			
+
 		</div>
-		<script>
+		<script>		// 
+				// function gup( name ) {
+				//     name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+				//     var regexS = "[\\?&]"+name+"=([^&#]*)";
+				//     var regex = new RegExp( regexS );
+				//     var results = regex.exec( window.location.href );
+				//     if( results == null ) {
+				//         return "";
+				//     } else {
+				//         return results[1];
+				//     }
+				// }
+				// 
 		console.log($("span#content").html());
 		$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
 			{
